@@ -65,6 +65,18 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set RA2 procedures
+#define RA2_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define RA2_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define RA2_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define RA2_GetValue()              PORTAbits.RA2
+#define RA2_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define RA2_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define RA2_SetPullup()             do { WPUAbits.WPUA2 = 1; } while(0)
+#define RA2_ResetPullup()           do { WPUAbits.WPUA2 = 0; } while(0)
+#define RA2_SetAnalogMode()         do { ANSELAbits.ANSELA2 = 1; } while(0)
+#define RA2_SetDigitalMode()        do { ANSELAbits.ANSELA2 = 0; } while(0)
+
 // get/set RA4 procedures
 #define RA4_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
 #define RA4_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
@@ -76,18 +88,6 @@
 #define RA4_ResetPullup()           do { WPUAbits.WPUA4 = 0; } while(0)
 #define RA4_SetAnalogMode()         do { ANSELAbits.ANSELA4 = 1; } while(0)
 #define RA4_SetDigitalMode()        do { ANSELAbits.ANSELA4 = 0; } while(0)
-
-// get/set RA5 procedures
-#define RA5_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
-#define RA5_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
-#define RA5_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
-#define RA5_GetValue()              PORTAbits.RA5
-#define RA5_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
-#define RA5_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
-#define RA5_SetPullup()             do { WPUAbits.WPUA5 = 1; } while(0)
-#define RA5_ResetPullup()           do { WPUAbits.WPUA5 = 0; } while(0)
-#define RA5_SetAnalogMode()         do { ANSELAbits.ANSELA5 = 1; } while(0)
-#define RA5_SetDigitalMode()        do { ANSELAbits.ANSELA5 = 0; } while(0)
 
 // get/set RB4 procedures
 #define RB4_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
@@ -161,17 +161,6 @@
  */
 void PIN_MANAGER_Initialize (void);
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Interrupt on Change Handling routine
- * @Example
-    PIN_MANAGER_IOC();
- */
-void PIN_MANAGER_IOC(void);
 
 
 
