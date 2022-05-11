@@ -2283,7 +2283,6 @@ design rules under a new name.</description>
 <contactref element="OS1" pad="4"/>
 <contactref element="C6" pad="1"/>
 <contactref element="OS1" pad="1"/>
-<contactref element="R4" pad="1"/>
 <contactref element="C7" pad="1"/>
 <contactref element="L1" pad="2"/>
 <wire x1="35.5092" y1="15.5448" x2="31.7754" y2="15.5448" width="0.3048" layer="1"/>
@@ -2293,7 +2292,6 @@ design rules under a new name.</description>
 <wire x1="30.2514" y1="7.239" x2="27.1272" y2="4.1148" width="0.3048" layer="1"/>
 <wire x1="31.6992" y1="7.239" x2="30.6324" y2="7.239" width="0.3048" layer="1"/>
 <wire x1="30.6324" y1="7.239" x2="30.2514" y2="7.239" width="0.3048" layer="1"/>
-<wire x1="22.86" y1="4.1148" x2="22.86" y2="4.13" width="0.3048" layer="1"/>
 <wire x1="31.6992" y1="7.239" x2="31.75" y2="7.3" width="0.3048" layer="1"/>
 <wire x1="31.7754" y1="14.2494" x2="31.7754" y2="15.3924" width="0.3048" layer="1"/>
 <wire x1="30.6324" y1="13.1064" x2="31.7754" y2="14.2494" width="0.3048" layer="1"/>
@@ -2710,6 +2708,23 @@ design rules under a new name.</description>
 <contactref element="F1" pad="1"/>
 <contactref element="L1" pad="1"/>
 <wire x1="55.5" y1="45.72" x2="52.2" y2="45.72" width="0.3048" layer="1"/>
+</signal>
+<signal name="RLED">
+<contactref element="IC2" pad="5"/>
+<contactref element="R4" pad="1"/>
+<wire x1="22.86" y1="4.13" x2="43.815" y2="11.735" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="MLED">
+<contactref element="IC2" pad="6"/>
+</signal>
+<signal name="RELAY">
+<contactref element="IC2" pad="9"/>
+</signal>
+<signal name="MIN1">
+<contactref element="IC2" pad="7"/>
+</signal>
+<signal name="MIN0">
+<contactref element="IC2" pad="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
