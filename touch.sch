@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.7.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -12846,7 +12846,7 @@ Source: K2.pdf</description>
 <rectangle x1="-5.975" y1="-1.6" x2="-3.625" y2="-0.575" layer="51"/>
 <rectangle x1="3.625" y1="-1.6" x2="5.975" y2="-0.575" layer="51" rot="R180"/>
 <rectangle x1="3.625" y1="0.575" x2="5.975" y2="1.6" layer="51" rot="R180"/>
-<polygon width="0.4064" layer="1" pour="solid">
+<polygon width="0.4064" layer="1">
 <vertex x="-2.3383" y="-1.35"/>
 <vertex x="0" y="-2.7"/>
 <vertex x="2.3383" y="-1.35"/>
@@ -12854,7 +12854,7 @@ Source: K2.pdf</description>
 <vertex x="0" y="2.7"/>
 <vertex x="-2.3383" y="1.35"/>
 </polygon>
-<polygon width="0.4064" layer="29" pour="solid">
+<polygon width="0.4064" layer="29">
 <vertex x="-2.3383" y="-1.35"/>
 <vertex x="0" y="-2.7"/>
 <vertex x="2.3383" y="-1.35"/>
@@ -12862,7 +12862,7 @@ Source: K2.pdf</description>
 <vertex x="0" y="2.7"/>
 <vertex x="-2.3383" y="1.35"/>
 </polygon>
-<polygon width="0.4064" layer="31" pour="solid">
+<polygon width="0.4064" layer="31">
 <vertex x="-2.3383" y="-1.35"/>
 <vertex x="0" y="-2.7"/>
 <vertex x="2.3383" y="-1.35"/>
@@ -12898,7 +12898,7 @@ Source: K2.pdf</description>
 <rectangle x1="-5.975" y1="-1.6" x2="-3.625" y2="-0.575" layer="51"/>
 <rectangle x1="3.625" y1="-1.6" x2="5.975" y2="-0.575" layer="51" rot="R180"/>
 <rectangle x1="3.625" y1="0.575" x2="5.975" y2="1.6" layer="51" rot="R180"/>
-<polygon width="0.4064" layer="29" pour="solid">
+<polygon width="0.4064" layer="29">
 <vertex x="-2.3383" y="-1.35"/>
 <vertex x="0" y="-2.7"/>
 <vertex x="2.3383" y="-1.35"/>
@@ -12906,7 +12906,7 @@ Source: K2.pdf</description>
 <vertex x="0" y="2.7"/>
 <vertex x="-2.3383" y="1.35"/>
 </polygon>
-<polygon width="0.4064" layer="31" pour="solid">
+<polygon width="0.4064" layer="31">
 <vertex x="-2.3383" y="-1.35"/>
 <vertex x="0" y="-2.7"/>
 <vertex x="2.3383" y="-1.35"/>
@@ -12933,12 +12933,12 @@ Source: http://www.kingbright.com/manager/upload/pdf/KA-3528ASYC(Ver1189474662.1
 <rectangle x1="-1.75" y1="-1.1" x2="-1.6" y2="-0.6" layer="51"/>
 <rectangle x1="1.6" y1="-1.1" x2="1.75" y2="-0.6" layer="51" rot="R180"/>
 <rectangle x1="1.6" y1="0.6" x2="1.75" y2="1.1" layer="51" rot="R180"/>
-<polygon width="0.1016" layer="51" pour="solid">
+<polygon width="0.1016" layer="51">
 <vertex x="0.825" y="-1.35"/>
 <vertex x="1.55" y="-1.35"/>
 <vertex x="1.55" y="-0.625"/>
 </polygon>
-<polygon width="0.1016" layer="21" pour="solid">
+<polygon width="0.1016" layer="21">
 <vertex x="0.825" y="-1.35"/>
 <vertex x="1.55" y="-1.35"/>
 <vertex x="1.55" y="-1.175"/>
@@ -13257,12 +13257,12 @@ Source: http://www.kingbright.com/manager/upload/pdf/KA-3528ASYC(Ver1189474662.1
 <text x="5.715" y="-4.572" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="C" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="A" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
-<polygon width="0.1524" layer="94" pour="solid">
+<polygon width="0.1524" layer="94">
 <vertex x="-3.048" y="-1.27"/>
 <vertex x="-3.429" y="-2.159"/>
 <vertex x="-2.54" y="-1.778"/>
 </polygon>
-<polygon width="0.1524" layer="94" pour="solid">
+<polygon width="0.1524" layer="94">
 <vertex x="-2.921" y="-2.413"/>
 <vertex x="-3.302" y="-3.302"/>
 <vertex x="-2.413" y="-2.921"/>
@@ -14042,8 +14042,6 @@ Source: www.kingbright.com</description>
 <part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1.2k"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="200"/>
-<part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="L1" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="SM-1206" device="" package3d_urn="urn:adsk.eagle:package:14693/2" value="1000"/>
@@ -14070,6 +14068,8 @@ Source: www.kingbright.com</description>
 <part name="DPOWER" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="DPOWER"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="200"/>
+<part name="P+13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14236,13 +14236,6 @@ Source: www.kingbright.com</description>
 <attribute name="NAME" x="13.97" y="-8.6614" size="1.778" layer="95"/>
 <attribute name="VALUE" x="13.97" y="-13.462" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="96.52" y="91.44" smashed="yes">
-<attribute name="NAME" x="92.71" y="92.9386" size="1.778" layer="95"/>
-<attribute name="VALUE" x="92.71" y="88.138" size="1.778" layer="96"/>
-</instance>
-<instance part="GND17" gate="1" x="91.44" y="81.28" smashed="yes">
-<attribute name="VALUE" x="88.9" y="78.74" size="1.778" layer="96"/>
-</instance>
 <instance part="C7" gate="G$1" x="99.06" y="-7.62" smashed="yes">
 <attribute name="NAME" x="100.076" y="-6.985" size="1.778" layer="95"/>
 <attribute name="VALUE" x="100.076" y="-11.811" size="1.778" layer="96"/>
@@ -14336,6 +14329,13 @@ Source: www.kingbright.com</description>
 <instance part="P+12" gate="VCC" x="91.44" y="71.12" smashed="yes">
 <attribute name="VALUE" x="88.9" y="71.12" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R8" gate="G$1" x="96.52" y="83.82" smashed="yes">
+<attribute name="NAME" x="92.71" y="85.3186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="92.71" y="80.518" size="1.778" layer="96"/>
+</instance>
+<instance part="P+13" gate="VCC" x="101.6" y="93.98" smashed="yes">
+<attribute name="VALUE" x="99.06" y="93.98" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -14427,11 +14427,6 @@ Source: www.kingbright.com</description>
 <pinref part="S1" gate="G$1" pin="3"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 <junction x="0" y="5.08"/>
-</segment>
-<segment>
-<pinref part="XT1" gate="A" pin="C"/>
-<pinref part="GND17" gate="1" pin="GND"/>
-<junction x="91.44" y="83.82"/>
 </segment>
 <segment>
 <pinref part="C7" gate="G$1" pin="2"/>
@@ -14625,6 +14620,13 @@ Source: www.kingbright.com</description>
 <wire x1="99.06" y1="68.58" x2="91.44" y2="68.58" width="0.1524" layer="91"/>
 <junction x="91.44" y="68.58"/>
 </segment>
+<segment>
+<pinref part="XT1" gate="A" pin="A"/>
+<pinref part="P+13" gate="VCC" pin="VCC"/>
+<wire x1="101.6" y1="91.44" x2="91.44" y2="91.44" width="0.1524" layer="91"/>
+<junction x="91.44" y="91.44"/>
+<junction x="101.6" y="91.44"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
@@ -14784,18 +14786,18 @@ Source: www.kingbright.com</description>
 <junction x="111.76" y="35.56"/>
 </segment>
 <segment>
-<wire x1="104.14" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<label x="104.14" y="93.98" size="1.778" layer="95"/>
-<junction x="101.6" y="91.44"/>
-<junction x="104.14" y="91.44"/>
-</segment>
-<segment>
 <wire x1="104.14" y1="10.16" x2="101.6" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="TTLRS232" gate="G$1" pin="3"/>
 <junction x="101.6" y="10.16"/>
 <junction x="104.14" y="10.16"/>
 <label x="104.14" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="104.14" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<junction x="101.6" y="83.82"/>
+<junction x="104.14" y="83.82"/>
+<label x="101.6" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX1" class="0">
@@ -14922,13 +14924,6 @@ Source: www.kingbright.com</description>
 <pinref part="R4" gate="G$1" pin="2"/>
 <junction x="20.32" y="7.62"/>
 <junction x="22.86" y="-10.16"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="XT1" gate="A" pin="A"/>
-<pinref part="R5" gate="G$1" pin="1"/>
-<junction x="91.44" y="91.44"/>
 </segment>
 </net>
 <net name="N$16" class="1">
@@ -15117,6 +15112,13 @@ Source: www.kingbright.com</description>
 <pinref part="R6" gate="G$1" pin="1"/>
 <junction x="0" y="91.44"/>
 <pinref part="PWR" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="XT1" gate="A" pin="C"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<junction x="91.44" y="83.82"/>
 </segment>
 </net>
 </nets>
