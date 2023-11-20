@@ -15146,7 +15146,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="IC2" gate="G$1" pin="RC5"/>
 <wire x1="17.78" y1="43.18" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
-<label x="10.16" y="40.64" size="1.778" layer="95"/>
+<label x="12.7" y="43.18" size="1.778" layer="95"/>
 <junction x="17.78" y="43.18"/>
 <junction x="12.7" y="43.18"/>
 </segment>
@@ -15162,7 +15162,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="IC2" gate="G$1" pin="RC4"/>
 <wire x1="17.78" y1="40.64" x2="12.7" y2="40.64" width="0.1524" layer="91"/>
-<label x="10.16" y="38.1" size="1.778" layer="95"/>
+<label x="12.7" y="40.64" size="1.778" layer="95"/>
 <junction x="17.78" y="40.64"/>
 <junction x="12.7" y="40.64"/>
 </segment>
@@ -15201,7 +15201,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="IC2" gate="G$1" pin="RC3"/>
 <wire x1="17.78" y1="38.1" x2="5.08" y2="38.1" width="0.1524" layer="91"/>
-<label x="2.54" y="35.56" size="1.778" layer="95"/>
+<label x="7.62" y="38.1" size="1.778" layer="95"/>
 <junction x="17.78" y="38.1"/>
 <junction x="5.08" y="38.1"/>
 </segment>

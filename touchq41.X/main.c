@@ -13,10 +13,10 @@
   Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC18F14Q41
-        Driver Version    :  2.00
-*/
+	Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
+	Device            :  PIC18F14Q41
+	Driver Version    :  2.00
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -39,39 +39,114 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
+
+#pragma warning disable 520
+#pragma warning disable 1498
+
+#include <xc.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 #include "mcc_generated_files/mcc.h"
 
+volatile uint32_t ticks = 0;
+const char build_version[] = "MQTT Test Q41";
+const char *build_date = __DATE__, *build_time = __TIME__;
+
+char buffer[128], opbuffer[24];
+
+static void tmr0isr(void);
+static void delayisr(void);
+uint32_t get_ticks(void);
+void clear_ticks(void);
+void wdtdelay(const uint32_t);
+
 /*
-                         Main application
+			 Main application
  */
 void main(void)
 {
-    // Initialize the device
-    SYSTEM_Initialize();
+	uint8_t count = 0;
+	// Initialize the device
+	SYSTEM_Initialize();
 
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
-    // Use the following macros to:
+	TMR0_SetInterruptHandler(tmr0isr);
+	TMR1_SetInterruptHandler(delayisr);
 
-    // Enable high priority global interrupts
-    //INTERRUPT_GlobalInterruptHighEnable();
+	// Enable high priority global interrupts
+	INTERRUPT_GlobalInterruptHighEnable();
 
-    // Enable low priority global interrupts.
-    //INTERRUPT_GlobalInterruptLowEnable();
+	// Enable low priority global interrupts.
+	INTERRUPT_GlobalInterruptLowEnable();
 
-    // Disable high priority global interrupts
-    //INTERRUPT_GlobalInterruptHighDisable();
+	TMR0_StartTimer();
+	TMR1_StartTimer();
 
-    // Disable low priority global interrupts.
-    //INTERRUPT_GlobalInterruptLowDisable();
+	while (1) {
+		// Add your application code
+		MLED_Toggle();
+		wdtdelay(100000);
+		if (UART1_is_tx_ready()) {
+			/*
+			 * format data to JSON
+			 */
+			sprintf(buffer, "{\r\n     \"name\": \"%s\",\r\n     \"sequence\": %d,\r\n     \"build_date\": \"%s\",\r\n     \"build_time\": \"%s\"\r\n}",
+				build_version, count++, build_date, build_time);
+			/*
+			 * STDIO redirected to UART1
+			 */
+			printf("%s", buffer);
+		}
+	}
+}
 
-    while (1)
-    {
-        // Add your application code
-    }
+/*
+ * check timer0 irq 1 second time
+ */
+static void tmr0isr(void)
+{
+	RLED_Toggle();
+}
+
+/*
+ * check timer1 irq 500us time
+ * update ticks
+ */
+static void delayisr(void)
+{
+	ticks++;
+}
+
+uint32_t get_ticks(void)
+{
+	static uint32_t tmp = 0;
+
+	PIE3bits.TMR1IE = 0;
+	tmp = (uint32_t) ticks;
+	PIE3bits.TMR1IE = 1;
+	return tmp;
+}
+
+void clear_ticks(void)
+{
+	PIE3bits.TMR1IE = 0;
+	ticks = 0;
+	PIE3bits.TMR1IE = 1;
+}
+
+/*
+ * busy loop delay with WDT reset
+ */
+void wdtdelay(const uint32_t delay)
+{
+	uint32_t dcount;
+
+	for (dcount = 0; dcount <= delay; dcount++) { // delay a bit
+		ClrWdt(); // reset the WDT timer
+	};
 }
 /**
  End of File
-*/
+ */

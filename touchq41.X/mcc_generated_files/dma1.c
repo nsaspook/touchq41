@@ -51,7 +51,6 @@
 #include <xc.h>
 #include "dma1.h"
 
-void (*DMA1_SCNTI_InterruptHandler)(void);
 
 /**
   Section: DMA1 APIs
@@ -86,8 +85,7 @@ void DMA1_Initialize(void)
     PIR2bits.DMA1ORIF =0; 
     
     PIE2bits.DMA1DCNTIE = 0;
-    PIE2bits.DMA1SCNTIE = 1; 
-	DMA1_SetSCNTIInterruptHandler(DMA1_DefaultInterruptHandler);
+    PIE2bits.DMA1SCNTIE = 0;
     PIE2bits.DMA1AIE = 0;
     PIE2bits.DMA1ORIE = 0;
 	
@@ -181,24 +179,6 @@ void DMA1_SetDMAPriority(uint8_t priority)
 	PRLOCKbits.PRLOCKED = 1;
 }
 
-void __interrupt(irq(IRQ_DMA1SCNT),base(8)) DMA1_DMASCNTI_ISR()
-{
-    // Clear the source count interrupt flag
-    PIR2bits.DMA1SCNTIF = 0;
-
-    if (DMA1_SCNTI_InterruptHandler)
-            DMA1_SCNTI_InterruptHandler();
-}
-
-void DMA1_SetSCNTIInterruptHandler(void (* InterruptHandler)(void))
-{
-	 DMA1_SCNTI_InterruptHandler = InterruptHandler;
-}
-
-void DMA1_DefaultInterruptHandler(void){
-    // add your DMA1 interrupt custom code
-    // or set custom function using DMA1_SetSCNTIInterruptHandler() /DMA1_SetDCNTIInterruptHandler() /DMA1_SetAIInterruptHandler() /DMA1_SetORIInterruptHandler()
-}
 /**
  End of File
 */

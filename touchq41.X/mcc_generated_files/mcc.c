@@ -54,15 +54,18 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     DMA1_Initialize();
+    TMR1_Initialize();
+    TMR0_Initialize();
     UART2_Initialize();
     UART1_Initialize();
     SPI1_Initialize();
+    SystemArbiter_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // NOSC EXTOSC; NDIV 1; 
-    OSCCON1 = 0x70;
+    // NOSC EXTOSC   with 4x PLL; NDIV 1; 
+    OSCCON1 = 0x20;
     // CSWHOLD may proceed; SOSCPWR Low power; 
     OSCCON3 = 0x00;
     // MFOEN disabled; LFOEN disabled; ADOEN disabled; PLLEN enabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
@@ -96,6 +99,13 @@ void PMD_Initialize(void)
 }
 
 
+void SystemArbiter_Initialize(void)
+{
+    // This function is dependant on the PR1WAY CONFIG bit
+    PRLOCK = 0x55;
+    PRLOCK = 0xAA;
+    PRLOCKbits.PRLOCKED = 1;
+}
 /**
  End of File
 */
