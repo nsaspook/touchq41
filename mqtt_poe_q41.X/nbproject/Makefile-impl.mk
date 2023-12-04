@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=touchq41.X
+PROJECTNAME=mqtt_poe_q41.X
 
 # Active Configuration
 DEFAULTCONF=default

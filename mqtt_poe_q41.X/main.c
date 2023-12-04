@@ -13,10 +13,10 @@
   Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
-        Device            :  PIC18F14Q41
-        Driver Version    :  2.00
-*/
+	Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
+	Device            :  PIC18F14Q41
+	Driver Version    :  2.00
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -39,7 +39,7 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 
 #pragma warning disable 520
 #pragma warning disable 1498
@@ -55,7 +55,7 @@ volatile uint32_t ticks = 0;
 const char build_version[] = "MQTT Test Q41";
 const char *build_date = __DATE__, *build_time = __TIME__;
 
-char buffer[128], opbuffer[24];
+char buffer[512], opbuffer[24];
 
 static void tmr0isr(void);
 static void delayisr(void);
@@ -64,35 +64,35 @@ void clear_ticks(void);
 void wdtdelay(const uint32_t);
 
 /*
-                         Main application
+			 Main application
  */
 void main(void)
 {
-	uint8_t count = 0;
-    // Initialize the device
-    SYSTEM_Initialize();
+	uint32_t count = 0;
+	// Initialize the device
+	SYSTEM_Initialize();
 
 	TMR0_SetInterruptHandler(tmr0isr);
 	TMR1_SetInterruptHandler(delayisr);
 
-    // Enable high priority global interrupts
+	// Enable high priority global interrupts
 	INTERRUPT_GlobalInterruptHighEnable();
 
-    // Enable low priority global interrupts.
+	// Enable low priority global interrupts.
 	INTERRUPT_GlobalInterruptLowEnable();
 
 	TMR0_StartTimer();
 	TMR1_StartTimer();
 
-	while (1) {
+	while (true) {
 		// Add your application code
 		MLED_Toggle();
-		wdtdelay(100000);
+		wdtdelay(300000);
 		if (UART1_is_tx_ready()) {
 			/*
 			 * format data to JSON
 			 */
-			sprintf(buffer, "{\r\n     \"name\": \"%s\",\r\n     \"sequence\": %d,\r\n     \"build_date\": \"%s\",\r\n     \"build_time\": \"%s\"\r\n}",
+			snprintf(buffer, 510, "{\r\n     \"Qname\": \"%s\",\r\n     \"Qsequence\": %ld,\r\n     \"Qbuild_date\": \"%s\",\r\n     \"Qbuild_time\": \"%s\"\r\n}",
 				build_version, count++, build_date, build_time);
 			/*
 			 * STDIO redirected to UART1
@@ -106,9 +106,9 @@ void main(void)
  * check timer0 irq 1 second time
  */
 static void tmr0isr(void)
-    {
+{
 	RLED_Toggle();
-    }
+}
 
 /*
  * check timer1 irq 500us time
@@ -149,4 +149,4 @@ void wdtdelay(const uint32_t delay)
 }
 /**
  End of File
-*/
+ */
